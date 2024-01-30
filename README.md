@@ -1,67 +1,46 @@
-# Desafio de Desenvolvimento Front-end
+# Desafio Frontend - Vue.js 3 / Nuxt 3
 
-## Visão Geral
-Este desafio é projetado para avaliar suas habilidades na criação de interfaces de usuário responsivas e modulares. Você desenvolverá uma tela similar à fornecida. Abaixo, explicamos tudo o que você precisa saber para prosseguir. Não se preocupe se parecer desafiador à primeira vista! Não esperamos que todos completem todas as tarefas. Este teste é aplicado a candidatos de todos os níveis de experiência, então faça o melhor que puder sem pressão.
+Acesse o deploy através do link: https://learning-system-ebon.vercel.app/
 
-<br>
+## Descrição
+O projeto consiste na criação de uma aplicação web de controle de tarefas, visando demonstrar habilidades avançadas na concepção de interfaces de usuário (UI) responsivas e modulares. A inspiração para o design e layout da aplicação foi baseada em uma tela fornecida no Figma.
 
-## Instruções para Uso do GitHub
+## Ferramentas e Tecnologias
+- **Vue.js**: Versão 3.4.14
+- **Nuxt**: Versão 3.9.3
+- **Pinia**: Para gerenciamento de estados
+- **Sass**: SCSS para criar estilos escaláveis e de fácil manutenção
 
-### Fork do Repositório
-- Por favor, faça um fork deste repositório.
-- Todo o seu código para este case deve ser desenvolvido e armazenado neste fork.
-- Inclua um README com uma breve explicação sobre a estrutura do projeto e decisões tomadas.
+## Pré-requisitos
+- **Node.js** (Versão 18.0.0)
+- **Yarn** (Versão 1.22.19)
 
-### Submissão do Case
-- Após completar o desafio, certifique-se de que todo o seu código está devidamente commitado no seu fork.
-- Envie o link do seu repositório forkado para a equipe de recrutamento da Jurisoft.
+## Estrutura de Pastas
+`assets` <blockquote> Inclui arquivos de estilização scss, além de icons e imagens usados no projeto </blockquote>
+`components` <blockquote> Onde se encontra os componentes criados para cada seção, além de componentes reutilizáveis de uso comum entre as seções </blockquote>
+`interfaces` <blockquote> Contém arquivos de interface para serem usados a fim de garantir que determinados objetos aderem a essa estrutura específica </blockquote>
+`layouts` <blockquote> Armazena layouts que podem ser compartilhados entre diferentes páginas, como header e sidebar </blockquote>
+`pages` <blockquote> Contém as páginas da aplicação, que são automaticamente roteadas pelo Nuxt.js </blockquote>
+`public` <blockquote> Contém arquivos estáticos que são servidos diretamente, como imagens, icons, etc </blockquote>
+`store` <blockquote> Define a store utilizando o Pinia, que é um gerenciador de estado central para Vue.js </blockquote>
 
-<br>
 
-## Declaração de Uso do Código
-**Importante:** O código desenvolvido para este case não será utilizado em produção pela Jurisoft. Este desafio é exclusivamente para fins de avaliação das habilidades do candidato.
+## Instalação
+Clone o repositório:
 
-<br>
+```git clone https://github.com/starladyrie/learning-system.git```
 
-## Requisitos do Desafio
+Navegue até o diretório do projeto:
 
-### Estrutura do Layout
-- Desenvolva uma tela responsiva que se adapte a diversos tamanhos de dispositivos. ( Opcional )
-- A tela deve incluir as seguintes seções:
-  - Barra lateral de navegação.
-  - Área de cabeçalho com informações do usuário.
-  - Controle de rastreamento de tempo.
-  - Quadro de horas de trabalho diário.
-  - Seção de progresso no curso.
-  - Destaque do funcionário.
-  - Feedback diário.
+```cd learning-system```
 
-### Componentes Modulares
-- Utilize Nuxt 3 para construir componentes reutilizáveis e modulares.
-- Cada seção da tela deve ser um componente isolado.
+Instale as dependências com Yarn:
 
-### Estilização com SCSS
-- Utilize SCSS para criar estilos escaláveis e de fácil manutenção.
-- Aplique variáveis SCSS, mixins e aninhamento quando apropriado.
-- Garanta que a estilização seja consistente e alinhada com a imagem fornecida.
+```yarn install```
 
-### Interatividade
-- Adicione funcionalidades interativas como iniciar e pausar o rastreador de tempo e navegar pelas abas da barra lateral.
-- Implemente a lógica para simular o preenchimento do progresso dos cursos e atualizações de feedback diário.
+## Executando o Projeto
+Para iniciar o projeto, utilize o seguinte comando:
 
-### Dados Mockados
-- Utilize dados fictícios para preencher as seções da tela.
-- Os dados devem ser carregados dinamicamente nos componentes.
+```yarn dev```
 
-### Responsividade ( Opcional )
-- A interface deve ser completamente responsiva e funcionar em desktops e dispositivos móveis.
-- Teste e ajuste os layouts para garantir a usabilidade em vários tamanhos de tela.
-
-<br>
-
-## Critérios de Avaliação
-- **Qualidade do Código:** Limpeza, organização e documentação do código.
-- **Arquitetura do Projeto:** Estruturação lógica dos componentes e uso eficiente do Nuxt 3.
-- **Estilo e Responsividade:** Adesão ao design fornecido e comportamento responsivo.
-- **Interatividade:** Funcionamento adequado das interações propostas.
-
+O aplicativo estará disponível em http://localhost:3000.
