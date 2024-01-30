@@ -43,4 +43,16 @@ Para iniciar o projeto, utilize o seguinte comando:
 
 ```yarn dev```
 
-O aplicativo estará disponível em http://localhost:3000.
+O aplicativo estará disponível em http://localhost:3000
+
+## Pontos de Melhorias
+Alguns requisitos não foram atendidos devido ao curto período de tempo disponível para a entrega deste desafio. No entanto, pretende-se abordá-los num futuro próximo:
+
+- Usabilidade não adequada para todas as resoluções (responsividade)
+- Sidebar não está sendo minimizada
+- Layout do body da tabela quebrado em relação ao protótipo
+- Simulação de dados não preenchidos não implementada
+- Refatorações para otimização de código
+  -   Identificar estilizações repetidas e possibilidades de componentização
+  -   Realizar testes a fim de garantir o bom funcionamento dos métodos empregados
+    
