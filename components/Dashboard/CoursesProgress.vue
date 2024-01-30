@@ -34,7 +34,6 @@ import CoursesProgressChart from "./CoursesProgressContent/CoursesProgressChart.
   align-items: center;
   flex: 1 0 0;
   align-self: stretch;
-  width: inherit;
 }
 
 .courses-progress-content {

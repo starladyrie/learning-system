@@ -5,34 +5,42 @@ const menuItems = [
   {
     icon: "/SidebarIcons/layout-grid-line.svg",
     title: "Dashboard",
+    active: true,
   },
   {
     icon: "/SidebarIcons/calendar-line.svg",
     title: "Calendário",
+    active: false,
   },
   {
     icon: "/SidebarIcons/timer-line.svg",
     title: "Descanso",
+    active: false,
   },
   {
     icon: "/SidebarIcons/folders-line.svg",
     title: "Projetos",
+    active: false,
   },
   {
     icon: "/SidebarIcons/group-line.svg",
     title: "Times",
+    active: false,
   },
   {
     icon: "/SidebarIcons/equalizer-line.svg",
     title: "Integrações",
+    active: false,
   },
   {
     icon: "/SidebarIcons/star-smile-line.svg",
     title: "Benefícios",
+    active: false,
   },
   {
     icon: "/SidebarIcons/file-cloud-line.svg",
     title: "Documentos",
+    active: false,
   },
 ];
 </script>
@@ -48,6 +56,7 @@ const menuItems = [
       :key="item.title"
       :icon="item.icon"
       :title="item.title"
+      :active="item.active"
     ></SidebarItem>
   </div>
 </template>

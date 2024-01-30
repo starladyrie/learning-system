@@ -2,16 +2,35 @@
 interface Props {
   icon: string;
   title: string;
+  active?: boolean;
   shortcut?: string;
 }
 
-defineProps<Props>();
+const props = defineProps<Props>();
+
+const sidebarItemActive = computed(() => {
+  return {
+    ["sidebar-item--active"]: props.active,
+  };
+});
+
+const sidebarItemIconActive = computed(() => {
+  return {
+    ["sidebar-item-icon--active"]: props.active,
+  };
+});
 </script>
 
 <template>
-  <div class="sidebar-item">
-    <img :src="icon" />
+  <div class="sidebar-item" :class="sidebarItemActive">
+    <img :class="sidebarItemIconActive" :src="icon" />
     <span class="sidebar-item-title"> {{ title }} </span>
+    <div v-if="active" class="sidebar-item-shortcut">
+      <img
+        src="/SidebarIcons/arrow-right-s-line.svg"
+        class="sidebar-header-content-collapse-icon"
+      />
+    </div>
     <div v-if="shortcut" class="sidebar-item-shortcut">
       <div class="sidebar-item-shortcut-content">
         <span class="sidebar-item-shortcut-title"> ⌘ {{ shortcut }} </span>
@@ -38,6 +57,15 @@ defineProps<Props>();
 .sidebar-item img {
   width: 24px;
   height: 24px;
+}
+
+.sidebar-item--active {
+  background: $color-fill-neutral-low-1;
+  border-radius: 8px;
+}
+
+.sidebar-item-icon--active {
+  filter: invert(0.3) sepia(0.5) saturate(10) hue-rotate(-50deg);
 }
 
 .sidebar-item-title {
@@ -71,5 +99,10 @@ defineProps<Props>();
   font-weight: $font-weight-semibold;
   line-height: $line-height-sm;
   letter-spacing: -0.084px;
+}
+
+.sidebar-header-content-collapse-icon {
+  width: 24px;
+  height: 24px;
 }
 </style>

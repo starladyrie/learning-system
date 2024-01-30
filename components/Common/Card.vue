@@ -42,6 +42,8 @@ defineProps<Props>();
 <style lang="scss" scoped>
 .card-style {
   display: flex;
+  height: 100%;
+  width: -webkit-fill-available;
   padding: 16px;
   flex-direction: column;
   align-items: flex-start;

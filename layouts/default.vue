@@ -31,7 +31,6 @@ import NavbarHeader from "~/components/Layouts/Header/NavbarHeader.vue";
   align-items: flex-start;
   flex-shrink: 0;
   width: min-content;
-  height: 100%;
   border-right: 1px solid $color-stroke-soft-200;
   background: $color-fill-neutral-low-0;
 }

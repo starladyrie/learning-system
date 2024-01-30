@@ -1,20 +1,26 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+interface Props {
+  title: string;
+  subtitle: string;
+  image: string;
+  caption: string;
+}
+
+defineProps<Props>();
+</script>
 
 <template>
   <div class="spotlight-content">
-    <div class="spotlight-switch">
-      <div class="switch-toggler">
-        <span class="switch-label">Geral</span>
-      </div>
-
-      <div class="switch-toggler">
-        <span class="switch-label">Comentários</span>
-      </div>
-
-      <div class="switch-toggler">
-        <span class="switch-label">Prêmios</span>
-      </div>
+    <div class="spotlight-head">
+      <span class="spotlight-head-title"> {{ title }} </span>
+      <span class="spotlight-head-subtitle"> {{ subtitle }} </span>
     </div>
+
+    <img :src="image" height="148px" />
+
+    <span class="spotlight-head-subtitle spotlight-head-caption">
+      {{ caption }}
+    </span>
   </div>
 </template>
 
@@ -22,35 +28,42 @@
 .spotlight-content {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  // align-items: flex-end;
   gap: 16px;
   flex: 1 0 0;
   align-self: stretch;
 }
 
-.spotlight-switch {
+.spotlight-head {
   display: flex;
-  padding: 4px;
-  align-items: flex-start;
-  gap: 4px;
-  align-self: stretch;
-  border-radius: 10px;
-  background: $color-fill-neutral-low-1;
-}
-
-.switch-toggler {
-  display: flex;
-  padding: 4px 2px;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
   gap: 6px;
-  flex: 1 0 0;
-  border-radius: 6px;
-  background: $color-fill-neutral-low-0;
+  align-self: stretch;
+}
 
-  &:active {
-    box-shadow: 0px 2px 4px 0px rgba(27, 28, 29, 0.02),
-      0px 6px 10px 0px rgba(27, 28, 29, 0.06);
-  }
+.spotlight-head-title {
+  color: $color-text-on-neutral-low-strong;
+  text-align: center;
+  font-size: $font-size-xl;
+  font-weight: $font-weight-semibold;
+  line-height: $line-height-base;
+  letter-spacing: -0.27px;
+}
+
+.spotlight-head-subtitle {
+  color: $color-text-on-neutral-low-default;
+  text-align: center;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-normal;
+  line-height: $line-height-xs;
+}
+
+.spotlight-head-caption {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  align-self: stretch;
 }
 </style>

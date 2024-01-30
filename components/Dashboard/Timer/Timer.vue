@@ -1,6 +1,4 @@
 <script lang="ts" setup>
-import { ref, computed, onBeforeUnmount } from "vue";
-
 const emit = defineEmits(["finish"]);
 
 const isRunning = ref(false);
@@ -64,26 +62,29 @@ onBeforeUnmount(() => {
       <span class="timer-content-title">{{ trackerText }}</span>
       <div class="timer-cronometer">
         <span class="timer-cronometer-hours">{{ formatTime["hours"] }}:</span>
-        <span class="timer-cronometer-minutes"
-          >{{ formatTime["minutes"] }}:</span
-        >
-        <span class="timer-cronometer-seconds">{{
-          formatTime["seconds"]
-        }}</span>
+        <span class="timer-cronometer-minutes">
+          {{ formatTime["minutes"] }}:
+        </span>
+        <span class="timer-cronometer-seconds">
+          {{ formatTime["seconds"] }}
+        </span>
       </div>
+
       <div class="timer-actions">
         <button v-if="!isRunning" class="timer-action-button" @click="start">
           <img src="~/assets/icons/play-fill.svg" />
           <span class="timer-action-label">Iniciar</span>
         </button>
-        <div v-else>
+
+        <div v-else class="timer-secondary-actions">
           <button class="timer-action-button" @click="pause">
-            <img src="~/assets/icons/play-fill.svg" />
-            <span class="timer-action-label">Pausar</span>
+            <img src="~/assets/icons/pause-circle-fill.svg" />
+            <span class="timer-action-label-pause">Pausar</span>
           </button>
+          <div class="timer-secondary-actions-divider"></div>
           <button class="timer-action-button" @click="reset">
-            <img src="~/assets/icons/play-fill.svg" />
-            <span class="timer-action-label">Parar</span>
+            <img src="~/assets/icons/stop-circle-fill.svg" />
+            <span class="timer-action-label-stop">Parar</span>
           </button>
         </div>
       </div>
@@ -180,12 +181,28 @@ onBeforeUnmount(() => {
   align-self: stretch;
 }
 
+.timer-secondary-actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  align-self: stretch;
+}
+
+.timer-secondary-actions-divider {
+  width: 1px;
+  height: 12px;
+  background: $color-stroke-soft-200;
+}
+
 .timer-action-button {
   align-self: stretch;
   display: flex;
   align-items: center;
   border: none;
   background: $color-fill-neutral-low-0;
+  gap: 4px;
 
   &:hover {
     cursor: pointer;
@@ -194,6 +211,22 @@ onBeforeUnmount(() => {
 
 .timer-action-label {
   color: $color-fill-accent-base;
+  text-align: right;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+  line-height: $line-height-xs;
+}
+
+.timer-action-label-pause {
+  color: $color-text-on-neutral-low-strong;
+  text-align: right;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+  line-height: $line-height-xs;
+}
+
+.timer-action-label-stop {
+  color: $color-fill-accent-dark;
   text-align: right;
   font-size: $font-size-sm;
   font-weight: $font-weight-semibold;

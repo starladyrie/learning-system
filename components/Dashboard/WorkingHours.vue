@@ -28,11 +28,11 @@ import WorkingBarSubtitles from "./WorkingChart/WorkingBarSubtitles.vue";
 <style lang="scss" scoped>
 .working-hours {
   display: flex;
+  width: 100%;
   flex-direction: column;
   align-items: center;
   flex: 1 0 0;
   align-self: stretch;
-  width: max-content;
 }
 
 .working-hours-total {

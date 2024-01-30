@@ -1,6 +1,4 @@
 <script lang="ts" setup>
-import { ref } from "vue";
-
 import Card from "../Common/Card.vue";
 import Timer from "../Dashboard/Timer/Timer.vue";
 import PreviousTasks from "../Dashboard/Timer/PreviousTasks.vue";
@@ -48,6 +46,5 @@ const addTask = (event: ITask) => {
   align-items: center;
   flex: 1 0 0;
   align-self: stretch;
-  width: max-content;
 }
 </style>
